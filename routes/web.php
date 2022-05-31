@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [TaskController::class, 'index']);
 
 Route::prefix('tasks')->group(static function () {
     Route::get('/', [TaskController::class, 'index'])->name('task.get.all');
