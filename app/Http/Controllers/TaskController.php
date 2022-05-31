@@ -11,8 +11,10 @@ use App\Services\UsersService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
+use Symfony\Component\HttpFoundation\Response;
 
 class TaskController extends Controller
 {
@@ -52,7 +54,7 @@ class TaskController extends Controller
 
         }
 
-        return redirect(route('task.get.all'));
+        return redirect(route('task.get.all'), Response::HTTP_CREATED);
     }
 
     public function index(): Factory|View|Application
