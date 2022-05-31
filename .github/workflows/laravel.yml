@@ -50,4 +50,9 @@ jobs:
         DB_DATABASE: testing
       run: php artisan migrate --force -v
     - name: Test with phpunit 🧐
+      env:
+        DB_CONNECTION: mysql
+        DB_USERNAME: root
+        DB_PASSWORD: root
+        DB_DATABASE: testing
       run: vendor/bin/phpunit
