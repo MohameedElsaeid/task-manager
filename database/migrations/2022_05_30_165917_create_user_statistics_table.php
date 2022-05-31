@@ -9,17 +9,16 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('users', static function (Blueprint $table) {
-            $table->increments('user_id');
-            $table->string('name');
-            $table->string('email')->unique();
+        Schema::create('user_statistics', static function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id')->index();
+            $table->tinyInteger('tasks_count')->default(0);
             $table->timestamps();
         });
     }
 
-
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('statistics');
     }
 };
