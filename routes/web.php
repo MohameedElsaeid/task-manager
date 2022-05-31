@@ -20,3 +20,6 @@ Route::prefix('tasks')->group(static function () {
     Route::get('/create', [TaskController::class, 'create'])->name('task.get.create');
     Route::post('/store', [TaskController::class, 'store'])->name('task.post.create');
 });
+Route::prefix('statistics')->group(static function () {
+    Route::get('/', [StatisticsController::class, 'index'])->name('statistics.get.all');
+});
