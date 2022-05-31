@@ -43,6 +43,11 @@ jobs:
         php artisan config:clear
         php artisan cache:clear
     - name: Run Migrations 💾
+      env:
+        DB_CONNECTION: mysql
+        DB_USERNAME: root
+        DB_PASSWORD: root
+        DB_DATABASE: testing
       run: php artisan migrate --force -v
     - name: Test with phpunit 🧐
       run: vendor/bin/phpunit
