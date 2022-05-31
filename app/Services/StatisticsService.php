@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\StatisticsRepostiory;
+use App\Repositories\StatisticsRepository;
 use Illuminate\Database\Eloquent\Collection;
 
 class StatisticsService
 {
-    private StatisticsRepostiory $statisticsRepository;
+    private StatisticsRepository $statisticsRepository;
 
-    public function __construct(StatisticsRepostiory $statisticsRepository)
+    public function __construct(StatisticsRepository $statisticsRepository)
     {
         $this->statisticsRepository = $statisticsRepository;
     }

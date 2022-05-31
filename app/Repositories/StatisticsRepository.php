@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\UserStatistic;
 use Illuminate\Database\Eloquent\Collection;
 
-class StatisticsRepostiory
+class StatisticsRepository
 {
     private UserStatistic $userStatistic;
 
