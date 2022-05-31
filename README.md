@@ -1,4 +1,14 @@
 
+## steps to run the project
+
+- run composer install
+- copy `.env.example` file to `.env` file to get proper .env valid data
+- make sure that you update .env variables
+- run php artisan migrate
+- run php artisan db:seed
+- if you use valet then park and link 
+- go to http://task-manager.test/tasks
+
 ## about the project
 in this project I used
 - php8.0
