@@ -1,6 +1,12 @@
 
 ## steps to run the project
 
+- Make sure that you installed supervisor 
+- sudo apt-get install supervisor
+- copy laravel-worker.conf file to your machine if ubuntu you find it in /etc/supervisor/conf.d dir
+- make sure in .env QUEUE_CONNECTION  variable is = database
+
+
 - run composer install
 - copy `.env.example` file to `.env` file to get proper .env valid data
 - make sure that you update .env variables
