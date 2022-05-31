@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\DataTransferObjects\TasksDataObject;
 use App\Exceptions\CreateTaskFaildException;
+use App\Jobs\UpdateOrCreateUserStatisticsJob;
 use App\Models\Task;
 use App\Models\UserStatistic;
 use App\Models\UserTask;
@@ -43,9 +44,7 @@ class TasksService
 
             $userTask = $this->assignsTaskToUser($taskData, $task);
 
-            $userStatistic = $this->createUserStatistic($userTask);
-
-            $this->incrementUserTasks($userStatistic);
+            UpdateOrCreateUserStatisticsJob::dispatch($userTask);
 
             DB::commit();
 
@@ -63,7 +62,7 @@ class TasksService
 
     private function assignsTaskToUser(array $taskData, Task $task): UserTask
     {
-        $userTaskData = $this->prepareUserTaskData($taskData, $task->getTaskId());
+        $userTaskData = $this->prepareUserTaskData($taskData, $task->task_id);
 
         return $this->userTaskRepository->create($userTaskData);
     }
@@ -73,16 +72,6 @@ class TasksService
         return array_merge($taskData, [
             'task_id' => $taskId
         ]);
-    }
-
-    private function createUserStatistic(UserTask $userTask): UserStatistic
-    {
-        return $this->userStatisticRepository->findOrCreateByUserId($userTask->user_id);
-    }
-
-    private function incrementUserTasks(UserStatistic $userStatistic): void
-    {
-        $this->userStatisticRepository->incrementUserTasksCount($userStatistic);
     }
 
     public function getAllTasks(): LengthAwarePaginator
