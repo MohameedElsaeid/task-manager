@@ -8,7 +8,7 @@
 - Get Statistics 30 min
 - Create Job for Statistics about 10 min
 - Install and configure supervisor about 30 min
-- Total Task duration about 5h
+- Setup workflow GitHub actions 1H
 
 ## supervisor installation && configurations
 
