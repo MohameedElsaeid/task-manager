@@ -14,6 +14,11 @@ class TaskRepository
         $this->task = $task;
     }
 
+    public function create(array $taskData): Task
+    {
+        return $this->task->create($taskData);
+    }
+
     public function get(): LengthAwarePaginator
     {
         return $this->task->newQuery()

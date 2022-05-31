@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('tasks')->group(static function () {
     Route::get('/', [TaskController::class, 'index'])->name('task.get.all');
-
+    Route::get('/create', [TaskController::class, 'create'])->name('task.get.create');
+    Route::post('/store', [TaskController::class, 'store'])->name('task.post.create');
 });
