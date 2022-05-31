@@ -1,3 +1,14 @@
+## Time Logger foreach Task
+- install project 10 min
+- Write migrations about 30 min
+- Write seeders about 10 min
+- Handle layout directory about 1H and 30 min
+- Get all tasks API 30 min
+- Create Task form and logic 1H
+- Get Statistics 30 min
+- Create Job for Statistics about 10 min
+- Install and configure supervisor about 30 min
+- Total Task duration about 5h
 
 ## supervisor installation && configurations
 
