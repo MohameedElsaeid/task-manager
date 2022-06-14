@@ -58,7 +58,7 @@ in this project I used
 - composer
 
 used for architecture
-- SAO
+- SOA
 - repository design pattern
 
 the project has 3 main pages
